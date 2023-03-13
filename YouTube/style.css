@@ -1,0 +1,336 @@
+
+.header{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: white;
+  z-index: 100;
+  border-bottom: solid;
+  border-color: lightgray;
+}
+div.leftSection{
+  display: flex;
+  flex-direction:row;
+  width: 145px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 20px;
+  justify-content: space-between;
+}
+div.middleSection{
+  display: flex;
+  flex-direction:row;
+  flex:1;
+  max-width: 500px;
+  height: 40px;
+  margin-top: 10px;
+  justify-content: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+div.rightSection{
+  display: flex;
+  flex-direction:row;
+  flex-shrink: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+  width:350px;
+  height: 40px;
+  justify-content: space-between;
+  
+}
+.rightSectionIcon{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tooltip {
+position: absolute;
+background-color: gray;
+color: white;
+border-radius: 3px;
+padding: 10px;
+opacity: 0;
+width: 120px;
+top: 45px;
+pointer-events: none;
+/*text will not wrap*/
+white-space: nowrap;
+}
+.rightSectionIcon:hover .tooltip{
+  opacity: 1;
+}
+
+.notificationNumber{
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background-color: rgb(199, 6, 6);
+  color: white;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 20px;
+}
+
+.rightSectionIcon img{
+  width:40px;
+  height: 40px;
+  object-fit: cover;
+}
+input{
+  width: 70%;
+  border: solid;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  border-color: rgb(193, 189, 189);
+  border-width: 1px;
+  box-shadow: inset 1px 1px 3px rgb(240, 234, 234);
+}
+input::placeholder{
+  color: green;
+  padding-left: 20px;
+}
+img.searchIcon{
+  width: 40px;
+  border: solid;
+  border-color:  rgb(193, 189, 189);
+  border-width: 1px;
+  margin-right: 10px;
+  margin-left: -1px;
+}
+
+img.voiceIcon{
+  width: 40px;
+  object-fit: contain;
+  background-color:rgb(226, 232, 226);
+  border: none;
+  border-radius: 20px;
+}
+
+
+
+nav.sideBar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: fixed;
+  background-color:white;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  margin-top: 60px;
+  z-index: 200;
+}
+
+nav.sideBar img{
+  width: 40px;
+  height: 40px;
+}
+
+div.sideBarIcon {
+  /* justify-content: center, align-items: center will work with flex display*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+}
+.sideBarIcon:hover{
+  background-color: lightgray;
+}
+
+section.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap:20px;
+  row-gap:20px;
+  background-color: aliceblue;
+  padding-left: 80px
+}
+
+/*mrdia query for flexible screen content or responsive design*/
+@media (max-width:800px) {
+  section.grid{
+    grid-template-columns: 1fr 1fr;
+    text-decoration: underline;
+  }
+}
+@media(min-width:801px) and (max-width:1200px){
+  section.grid{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width:1201px){
+  section.grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-left: 180px
+  }
+
+
+/*Side par changes when screen size is more than 1200px*/
+  nav.sideBar{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    position: fixed;
+    background-color:white;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 180px;
+    margin-top: 60px;
+  }
+  
+  nav.sideBar img{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+  div.sideBarIcon {
+    /* justify-content: center, align-items: center will work with flex display*/
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 140px;
+    margin-left: 20px;
+  }
+  .sideBarIcon:hover{
+    background-color: lightgray;
+  }
+
+}
+
+
+div.parentBorder{
+ /*padding for top bottom and left right*/
+  padding: 10px 20px;
+}
+
+div.videoImage{
+  /* 100% will take 100% entire content width */
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  position:relative;
+}
+
+div.duration{
+  /*parent should be at position relative for absolute*/
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: black;
+  color: white;
+}
+img.topImage{
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  
+  /* cover will show image only in define width height*/
+  object-fit: cover;
+}
+
+div.details{
+  /* 1fr will take equal fre space with other fre space elemnts*/
+  /* 2fr will take double space as compare to other fre space elements*/
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 10px;
+}
+
+
+
+
+div.profile{
+  width: 40px;
+  vertical-align: top;
+  position: relative;
+}
+div.authorDetails{
+  width: 100%;
+}
+
+img.profilePhoto{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+div.profile:hover .profileTooltip{
+  opacity: 1;
+}
+
+div.profileTooltip{
+  position: absolute;
+  vertical-align: middle;
+  width: 200px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 1px gray, inset -1px -1px 1px gray;
+   /*this div will not take hover event*/
+  pointer-events: none;
+   /*it will not wrap test into multiple lines*/
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 300;
+  transition: 0.5s;
+}
+
+div.profileTooltip img{
+  vertical-align: middle;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+
+div.profileTooltip p{
+  margin: 0;
+}
+
+div.profileTooltip div{
+  display: inline-block;
+  vertical-align: middle;
+}
+p{
+  /* if Arial font is not there then it will take Helvetica as font*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+p.VideoTitle{
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+p.AuthorName, p.VideoView{
+  font-size: 12px;
+  font-weight: lighter;
+  color: gray;
+  margin-top:0;
+  margin-bottom: 5px;
+}
